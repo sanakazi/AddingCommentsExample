@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         volleyService();
     }
 
-    //to fetch data
+    //to establish connection
     private void volleyService(){
         StringRequest stringRequest = new StringRequest(Request.Method.GET, REGISTER_URL,
                 new Response.Listener<String>() {
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //to
+ //to fetch data using gson-json
     private void handleResponse(String response)
     {
         ResponseJson responseJson = new Gson().fromJson(response, ResponseJson.class);
@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    //to dynamically add rows as comments to our LinearLayout
     void updateReview(ArrayList<ResponseJson.MyMessage> lisreviewbean, int listSize) {
         TextView description, likecount, name, date;
         ImageView review_profile_pic;
